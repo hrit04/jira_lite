@@ -3,8 +3,8 @@ const app = express();
 const cors = require("cors");
 const http = require("http").Server(app);
 const PORT = 4000;
-// const { Novu } = require("@novu/node");
-// const novu = new Novu(<API_KEY>);
+//const { Novu } = require("@novu/node");
+//const novu = new Novu(<API_KEY>);
 const socketIO = require("socket.io")(http, {
 	cors: {
 		origin: "http://localhost:3000",
@@ -36,7 +36,7 @@ let tasks = {
 				title: "Review GitHub issues",
 				comments: [
 					{
-						name: "David",
+						name: "Hritam",
 						text: "Ensure you review before merging",
 						id: fetchID(),
 					},
@@ -62,21 +62,23 @@ let tasks = {
 	},
 };
 
-// const sendNotification = async (user) => {
-// 	try {
-// 		const result = await novu.trigger("<TEMPLATE_ID>", {
-// 			to: {
-// 				subscriberId: "<SUBSCRIBER_ID>",
-// 			},
-// 			payload: {
-// 				userId: user,
-// 			},
-// 		});
-// 		console.log(result);
-// 	} catch (err) {
-// 		console.error("Error >>>>", { err });
-// 	}
-// };
+/*
+const sendNotification = async (user) => {
+	try {
+		const result = await novu.trigger("<TEMPLATE_ID>", {
+			to: {
+				subscriberId: "<SUBSCRIBER_ID>",
+			},
+			payload: {
+				userId: user,
+			},
+		});
+		console.log(result);
+	} catch (err) {
+		console.error("Error >>>>", { err });
+	}
+};
+*/
 socketIO.on("connection", (socket) => {
 	console.log(`⚡: ${socket.id} user just connected!`);
 
