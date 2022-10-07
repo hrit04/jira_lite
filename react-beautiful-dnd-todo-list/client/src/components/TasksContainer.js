@@ -22,11 +22,8 @@ const TasksContainer = ({ socket }) => {
 
 	const handleDragEnd = ({ destination, source }) => {
 		if (!destination) return;
-		if (
-			destination.index === source.index &&
-			destination.droppableId === source.droppableId
-		)
-			return;
+		if (destination.index === source.index && destination.droppableId === source.droppableId)
+		   return;
 
 		socket.emit("taskDragged", {
 			source,

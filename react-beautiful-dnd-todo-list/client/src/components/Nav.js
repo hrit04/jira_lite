@@ -13,7 +13,7 @@ const Nav = () => {
 	// 	navigate(notification.cta.data.url);
 	return (
 		<nav className='navbar'>
-			<h3>Team's todo list</h3>
+			<h3>JIRA LIT</h3>
 			{/* <div>
 				<NovuProvider
 					subscriberId='<SUBSCRIBER_ID>'
